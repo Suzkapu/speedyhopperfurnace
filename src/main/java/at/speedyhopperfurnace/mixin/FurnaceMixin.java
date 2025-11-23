@@ -10,8 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractFurnaceBlockEntity.class)
 public class FurnaceMixin {
-    // In 1.21, this method takes (Level, AbstractFurnaceBlockEntity).
-    // Mixins require exact type matching, so we use Level, not ServerLevel.
     @Inject(method = "getTotalCookTime", at = @At("RETURN"), cancellable = true)
     private static void speedy_getTotalCookTime(Level level, AbstractFurnaceBlockEntity furnace, CallbackInfoReturnable<Integer> cir) {
         int multiplier = Config.FURNACE_SPEED_MULTIPLIER.get();
