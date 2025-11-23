@@ -1,0 +1,13 @@
+{
+  "itemGroup.speedyhopperfurnace": "Example Mod Tab",
+  "block.speedyhopperfurnace.example_block": "Example Block",
+  "item.speedyhopperfurnace.example_item": "Example Item",
+
+  "speedyhopperfurnace.configuration.title": "Speedy_Hopper&Furnace Configs",
+  "speedyhopperfurnace.configuration.section.speedyhopperfurnace.common.toml": "Speedy_Hopper&Furnace Configs",
+  "speedyhopperfurnace.configuration.section.speedyhopperfurnace.common.toml.title": "Speedy_Hopper&Furnace Configs",
+  "speedyhopperfurnace.configuration.items": "Item List",
+  "speedyhopperfurnace.configuration.logDirtBlock": "Log Dirt Block",
+  "speedyhopperfurnace.configuration.magicNumberIntroduction": "Magic Number Text",
+  "speedyhopperfurnace.configuration.magicNumber": "Magic Number"
+}
