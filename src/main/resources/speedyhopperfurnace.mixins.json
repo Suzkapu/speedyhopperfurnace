@@ -1,10 +1,10 @@
 {
   "required": true,
-  "package": "com.example.examplemod.mixin",
+  "package": "at.speedyhopperfurnace.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "at.speedyhopperfurnace.mixin.FurnaceMixin",
-    "at.speedyhopperfurnace.mixin.HopperMixin"
+    "FurnaceMixin",
+    "HopperMixin"
   ],
   "injectors": {
     "defaultRequire": 1
