@@ -13,5 +13,5 @@ public class Config {
             .comment("The cooldown in ticks for hopper transfer. Lower is faster. Default vanilla is 8.")
             .defineInRange("hopperCooldown", 1, 1, 20);
 
-    static final ModConfigSpec SPEC = BUILDER.build();
+    public static final ModConfigSpec SPEC = BUILDER.build();
 }

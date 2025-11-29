@@ -1,5 +1,6 @@
 package at.speedyhopperfurnace;
 
+import at.speedyhopperfurnace.commands.SpeedyHopperFurnaceCommand;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -10,6 +11,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
 
 @Mod(SpeedyHopperFurnace.MODID)
@@ -24,11 +27,17 @@ public class SpeedyHopperFurnace {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         }
+        NeoForge.EVENT_BUS.addListener(this::registerCommands);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("Speedy Hopper & Furnace Loaded");
         LOGGER.info("Furnace Speed Multiplier: {}", Config.FURNACE_SPEED_MULTIPLIER.get());
         LOGGER.info("Hopper Cooldown: {}", Config.HOPPER_COOLDOWN.get());
+    }
+
+    private void registerCommands(RegisterCommandsEvent event) {
+        SpeedyHopperFurnaceCommand.register(event.getDispatcher());
+        LOGGER.info("Speedy Hopper & Furnace commands registered.");
     }
 }
